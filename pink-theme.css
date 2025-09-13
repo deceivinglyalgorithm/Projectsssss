@@ -1,0 +1,708 @@
+/* Pinterest Pink Theme with Solid Pink More Actions Popup */
+:root {
+  --pink-primary: #fca7b4;     /* Light Pink */
+  --pink-secondary: #FFB6C1;   /* Light Pink */
+  --pink-accent: #fca7b4;      /* Light Pink */
+  --pink-bg: #FFF0F5;          /* Lavender Blush */
+  --pink-text: #8B008B;        /* Dark Magenta */
+}
+/* Background */
+body, [data-test-id="base-layout"] {
+  background-color: var(--pink-bg) !important;
+}
+/* Header/Navigation */
+header, nav, .Header {
+  background-color: var(--pink-primary) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 0 0 20px 20px !important;
+}
+/* Search Bar Container */
+.search-bar, 
+.SearchBar, 
+[data-test-id="search-bar"],
+[data-test-id*="search"],
+header + div,
+.Header + div {
+  background-color: transparent !important;
+  padding: 15px 0 !important;
+  border-radius: 20px !important;
+  margin: 0 10px !important;
+}
+/* Remove duplicate search bars */
+.SearchBar:nth-of-type(n+2),
+[data-test-id="search-bar"]:nth-of-type(n+2),
+header + div:nth-of-type(n+2),
+.Header + div:nth-of-type(n+2) {
+  display: none !important;
+}
+/* Search Input Field */
+input[type="search"],
+input[placeholder*="Search"],
+input[placeholder*="search"],
+[data-test-id="search-input"] {
+  background-color: white !important;
+  border: none !important;
+  border-radius: 30px !important;
+  padding: 12px 25px !important;
+  margin: 0 15px !important;
+  width: calc(100% - 30px) !important;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1) !important;
+}
+/* Category Tags Container */
+.tags-container,
+.category-tags,
+[data-test-id="tags"],
+[data-test-id="categories"] {
+  background-color: transparent !important;
+  padding: 15px !important;
+  border-radius: 20px !important;
+  margin: 0 10px 15px !important;
+}
+/* Individual Category Tags */
+.tag,
+.category-tag,
+.tags-container button,
+.category-tags button,
+[data-test-id="tag"] button,
+[data-test-id="category"] button {
+  background-color: white !important;
+  color: var(--pink-primary) !important;
+  border: none !important;
+  border-radius: 25px !important;
+  padding: 8px 18px !important;
+  margin: 5px !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+}
+/* Hover effect for tags */
+.tag:hover,
+.category-tag:hover,
+.tags-container button:hover,
+.category-tags button:hover,
+[data-test-id="tag"] button:hover,
+[data-test-id="category"] button:hover {
+  background-color: white !important;
+  color: var(--pink-primary) !important;
+  transform: scale(1.05) !important;
+}
+/* Buttons */
+button, .Button, [role="button"] {
+  background-color: transparent !important;
+  color: var(--pink-text) !important;
+  border: none !important;
+  border-radius: 25px !important;
+  padding: 10px 20px !important;
+  transition: all 0.2s ease !important;
+}
+/* Buttons - HOVER STATE */
+button:hover, .Button:hover, [role="button"]:hover {
+  background-color: transparent !important;
+  color: var(--pink-text) !important;
+  transform: scale(1.05) !important;
+}
+/* Special buttons that should remain white (like Create button) */
+button[data-test-id="create-button"],
+.Button[data-test-id="create-button"],
+[role="button"][data-test-id="create-button"] {
+  background-color: white !important;
+  color: var(--pink-primary) !important;
+}
+/* Special buttons hover state */
+button[data-test-id="create-button"]:hover,
+.Button[data-test-id="create-button"]:hover,
+[role="button"][data-test-id="create-button"]:hover {
+  background-color: white !important;
+  color: var(--pink-primary) !important;
+  transform: scale(1.05) !important;
+}
+/* Pins & Cards */
+.PinCard, .GridItem, [data-test-id="pin"] {
+  background-color: white !important;
+  border: none !important;
+  border-radius: 20px !important;
+  box-shadow: 0 4px 12px rgba(252, 167, 180, 0.2) !important;
+  overflow: hidden !important;
+}
+/* Pins & Cards - HOVER STATE */
+.PinCard:hover, .GridItem:hover, [data-test-id="pin"]:hover {
+  box-shadow: 0 6px 16px rgba(252, 167, 180, 0.3) !important;
+}
+/* Text */
+p, h1, h2, h3, span, div {
+  color: var(--pink-text) !important;
+}
+/* Links */
+a, a:hover {
+  color: var(--pink-primary) !important;
+  border-radius: 5px !important;
+  transition: all 0.2s ease !important;
+}
+/* Links - HOVER STATE */
+a:hover {
+  text-decoration: underline !important;
+}
+/* Icons */
+svg, i {
+  fill: var(--pink-primary) !important;
+  color: var(--pink-primary) !important;
+  transition: all 0.2s ease !important;
+}
+/* Icons - HOVER STATE */
+svg:hover, i:hover {
+  fill: var(--pink-primary) !important;
+  color: var(--pink-primary) !important;
+}
+/* Icons in Header */
+header svg, header i,
+nav svg, nav i,
+.Header svg, .Header i {
+  fill: white !important;
+  color: white !important;
+  stroke: white !important;
+}
+/* Icons in Header - HOVER STATE */
+header svg:hover, header i:hover,
+nav svg:hover, nav i:hover,
+.Header svg:hover, .Header i:hover {
+  fill: white !important;
+  color: white !important;
+  stroke: white !important;
+  transform: scale(1.2) !important;
+}
+/* Toolbar buttons */
+header button, nav button, .Header button {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 50% !important;
+  width: 40px !important;
+  height: 40px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.2s ease !important;
+}
+/* Toolbar buttons - HOVER STATE */
+header button:hover, nav button:hover, .Header button:hover {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  transform: scale(1.1) !important;
+}
+/* Input Fields */
+input, textarea {
+  border: none !important;
+  background-color: white !important;
+  border-radius: 15px !important;
+  padding: 10px 15px !important;
+  transition: all 0.2s ease !important;
+}
+/* Input Fields - HOVER STATE */
+input:hover, textarea:hover {
+  /* No changes */
+}
+/* Input Fields - FOCUS STATE */
+input:focus, textarea:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(252, 167, 180, 0.3) !important;
+}
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 5px !important;
+}
+::-webkit-scrollbar-track {
+  background: var(--pink-bg);
+  border-radius: 5px !important;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--pink-primary) !important;
+  border-radius: 5px !important;
+  transition: all 0.2s ease !important;
+}
+/* Scrollbar Thumb - HOVER STATE */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--pink-primary) !important;
+}
+/* Remove any gray backgrounds */
+div, section, aside, main, article {
+  background-color: transparent !important;
+}
+/* Remove gray from specific elements that might have it */
+[class*="gray"], [class*="Grey"], [id*="gray"], [id*="Grey"] {
+  background-color: transparent !important;
+  color: var(--pink-text) !important;
+}
+/* Remove gray from buttons that might have it */
+button[class*="gray"], button[class*="Grey"], 
+.Button[class*="gray"], .Button[class*="Grey"],
+[role="button"][class*="gray"], [role="button"][class*="Grey"] {
+  background-color: transparent !important;
+  color: var(--pink-text) !important;
+}
+
+/* DIALOGS / MODALS / POPUPS - PINK BACKGROUND */
+[role="dialog"],
+[role="alertdialog"],
+[role="modal"],
+.modal,
+.dialog,
+.popup,
+.popover,
+.tooltip,
+[data-test-id*="modal"],
+[data-test-id*="dialog"],
+[data-test-id*="popup"],
+[data-test-id*="popover"],
+[class*="modal"],
+[class*="dialog"],
+[class*="popup"],
+[class*="popover"],
+[class*="tooltip"] {
+  background-color: var(--pink-primary) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Dialog overlay/background */
+[role="dialog"]::backdrop,
+.modal-backdrop,
+.dialog-backdrop,
+.popup-backdrop,
+[class*="modal-backdrop"],
+[class*="dialog-backdrop"],
+[class*="popup-backdrop"] {
+  background-color: rgba(252, 167, 180, 0.5) !important;
+}
+
+/* Dialog content inside */
+[role="dialog"] > div,
+.modal > div,
+.dialog > div,
+.popup > div,
+.popover > div,
+[data-test-id*="modal"] > div,
+[data-test-id*="dialog"] > div,
+[data-test-id*="popup"] > div,
+[class*="modal"] > div,
+[class*="dialog"] > div,
+[class*="popup"] > div {
+  background-color: var(--pink-primary) !important;
+  border-radius: 20px !important;
+}
+
+/* Dialog headers */
+[role="dialog"] h1,
+[role="dialog"] h2,
+[role="dialog"] h3,
+.modal h1,
+.modal h2,
+.modal h3,
+.dialog h1,
+.dialog h2,
+.dialog h3,
+.popup h1,
+.popup h2,
+.popup h3,
+[data-test-id*="modal"] h1,
+[data-test-id*="modal"] h2,
+[data-test-id*="modal"] h3,
+[data-test-id*="dialog"] h1,
+[data-test-id*="dialog"] h2,
+[data-test-id*="dialog"] h3,
+[data-test-id*="popup"] h1,
+[data-test-id*="popup"] h2,
+[data-test-id*="popup"] h3,
+[class*="modal"] h1,
+[class*="modal"] h2,
+[class*="modal"] h3,
+[class*="dialog"] h1,
+[class*="dialog"] h2,
+[class*="dialog"] h3,
+[class*="popup"] h1,
+[class*="popup"] h2,
+[class*="popup"] h3 {
+  color: white !important;
+}
+
+/* Dialog text */
+[role="dialog"] p,
+[role="dialog"] span,
+[role="dialog"] div,
+.modal p,
+.modal span,
+.modal div,
+.dialog p,
+.dialog span,
+.dialog div,
+.popup p,
+.popup span,
+.popup div,
+[data-test-id*="modal"] p,
+[data-test-id*="modal"] span,
+[data-test-id*="modal"] div,
+[data-test-id*="dialog"] p,
+[data-test-id*="dialog"] span,
+[data-test-id*="dialog"] div,
+[data-test-id*="popup"] p,
+[data-test-id*="popup"] span,
+[data-test-id*="popup"] div,
+[class*="modal"] p,
+[class*="modal"] span,
+[class*="modal"] div,
+[class*="dialog"] p,
+[class*="dialog"] span,
+[class*="dialog"] div,
+[class*="popup"] p,
+[class*="popup"] span,
+[class*="popup"] div {
+  color: white !important;
+}
+
+/* Dialog buttons */
+[role="dialog"] button,
+.modal button,
+.dialog button,
+.popup button,
+[data-test-id*="modal"] button,
+[data-test-id*="dialog"] button,
+[data-test-id*="popup"] button,
+[class*="modal"] button,
+[class*="dialog"] button,
+[class*="popup"] button {
+  background-color: white !important;
+  color: var(--pink-primary) !important;
+  border: none !important;
+  border-radius: 25px !important;
+  padding: 10px 20px !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+}
+
+/* Dialog buttons hover state */
+[role="dialog"] button:hover,
+.modal button:hover,
+.dialog button:hover,
+.popup button:hover,
+[data-test-id*="modal"] button:hover,
+[data-test-id*="dialog"] button:hover,
+[data-test-id*="popup"] button:hover,
+[class*="modal"] button:hover,
+[class*="dialog"] button:hover,
+[class*="popup"] button:hover {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  transform: scale(1.05) !important;
+}
+
+/* Dialog input fields */
+[role="dialog"] input,
+[role="dialog"] textarea,
+.modal input,
+.modal textarea,
+.dialog input,
+.dialog textarea,
+.popup input,
+.popup textarea,
+[data-test-id*="modal"] input,
+[data-test-id*="modal"] textarea,
+[data-test-id*="dialog"] input,
+[data-test-id*="dialog"] textarea,
+[data-test-id*="popup"] input,
+[data-test-id*="popup"] textarea,
+[class*="modal"] input,
+[class*="modal"] textarea,
+[class*="dialog"] input,
+[class*="dialog"] textarea,
+[class*="popup"] input,
+[class*="popup"] textarea {
+  background-color: white !important;
+  border: none !important;
+  border-radius: 15px !important;
+  padding: 10px 15px !important;
+}
+
+/* Dialog close buttons */
+[role="dialog"] button[aria-label*="close"],
+[role="dialog"] button[aria-label*="Close"],
+.modal button[aria-label*="close"],
+.modal button[aria-label*="Close"],
+.dialog button[aria-label*="close"],
+.dialog button[aria-label*="Close"],
+.popup button[aria-label*="close"],
+.popup button[aria-label*="Close"],
+[data-test-id*="modal"] button[aria-label*="close"],
+[data-test-id*="modal"] button[aria-label*="Close"],
+[data-test-id*="dialog"] button[aria-label*="close"],
+[data-test-id*="dialog"] button[aria-label*="Close"],
+[data-test-id*="popup"] button[aria-label*="close"],
+[data-test-id*="popup"] button[aria-label*="Close"],
+[class*="modal"] button[aria-label*="close"],
+[class*="modal"] button[aria-label*="Close"],
+[class*="dialog"] button[aria-label*="close"],
+[class*="dialog"] button[aria-label*="Close"],
+[class*="popup"] button[aria-label*="close"],
+[class*="popup"] button[aria-label*="Close"] {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
+  border-radius: 50% !important;
+  width: 30px !important;
+  height: 30px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* AGGRESSIVE PIN OPTIONS/MORE ACTIONS POPUP - SOLID PINK */
+/* This targets the popup that appears when clicking the three dots on a pin */
+div[role="menu"],
+div[data-test-id*="menu"],
+div[class*="menu"],
+div[data-test-id*="options"],
+div[class*="options"],
+div[data-test-id*="actions"],
+div[class*="actions"],
+div[data-test-id*="more"],
+div[class*="more"],
+div[data-test-id*="dropdown"],
+div[class*="dropdown"],
+div[data-test-id*="popup"],
+div[class*="popup"],
+div[data-test-id*="popover"],
+div[class*="popover"],
+div[data-test-id*="context"],
+div[class*="context"],
+div[data-test-id*="overlay"],
+div[class*="overlay"],
+div[data-test-id*="flyout"],
+div[class*="flyout"],
+div[data-test-id*="tooltip"],
+div[class*="tooltip"] {
+  background-color: #fca7b4 !important;
+  border-radius: 20px !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* AGGRESSIVE - Target any element that might be inside the popup */
+div[role="menu"] > div,
+div[data-test-id*="menu"] > div,
+div[class*="menu"] > div,
+div[data-test-id*="options"] > div,
+div[class*="options"] > div,
+div[data-test-id*="actions"] > div,
+div[class*="actions"] > div,
+div[data-test-id*="more"] > div,
+div[class*="more"] > div,
+div[data-test-id*="dropdown"] > div,
+div[class*="dropdown"] > div,
+div[data-test-id*="popup"] > div,
+div[class*="popup"] > div,
+div[data-test-id*="popover"] > div,
+div[class*="popover"] > div,
+div[data-test-id*="context"] > div,
+div[class*="context"] > div,
+div[data-test-id*="overlay"] > div,
+div[class*="overlay"] > div,
+div[data-test-id*="flyout"] > div,
+div[class*="flyout"] > div,
+div[data-test-id*="tooltip"] > div,
+div[class*="tooltip"] > div {
+  background-color: #fca7b4 !important;
+  border-radius: 20px !important;
+}
+
+/* AGGRESSIVE - Target buttons inside the popup */
+div[role="menu"] button,
+div[data-test-id*="menu"] button,
+div[class*="menu"] button,
+div[data-test-id*="options"] button,
+div[class*="options"] button,
+div[data-test-id*="actions"] button,
+div[class*="actions"] button,
+div[data-test-id*="more"] button,
+div[class*="more"] button,
+div[data-test-id*="dropdown"] button,
+div[class*="dropdown"] button,
+div[data-test-id*="popup"] button,
+div[class*="popup"] button,
+div[data-test-id*="popover"] button,
+div[class*="popover"] button,
+div[data-test-id*="context"] button,
+div[class*="context"] button,
+div[data-test-id*="overlay"] button,
+div[class*="overlay"] button,
+div[data-test-id*="flyout"] button,
+div[class*="flyout"] button,
+div[data-test-id*="tooltip"] button,
+div[class*="tooltip"] button {
+  background-color: transparent !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 10px !important;
+  padding: 10px 15px !important;
+  margin: 5px 10px !important;
+  text-align: left !important;
+  transition: all 0.2s ease !important;
+}
+
+/* AGGRESSIVE - Target buttons hover state inside the popup */
+div[role="menu"] button:hover,
+div[data-test-id*="menu"] button:hover,
+div[class*="menu"] button:hover,
+div[data-test-id*="options"] button:hover,
+div[class*="options"] button:hover,
+div[data-test-id*="actions"] button:hover,
+div[class*="actions"] button:hover,
+div[data-test-id*="more"] button:hover,
+div[class*="more"] button:hover,
+div[data-test-id*="dropdown"] button:hover,
+div[class*="dropdown"] button:hover,
+div[data-test-id*="popup"] button:hover,
+div[class*="popup"] button:hover,
+div[data-test-id*="popover"] button:hover,
+div[class*="popover"] button:hover,
+div[data-test-id*="context"] button:hover,
+div[class*="context"] button:hover,
+div[data-test-id*="overlay"] button:hover,
+div[class*="overlay"] button:hover,
+div[data-test-id*="flyout"] button:hover,
+div[class*="flyout"] button:hover,
+div[data-test-id*="tooltip"] button:hover,
+div[class*="tooltip"] button:hover {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  transform: scale(1.02) !important;
+}
+
+/* AGGRESSIVE - Target icons inside the popup */
+div[role="menu"] svg,
+div[data-test-id*="menu"] svg,
+div[class*="menu"] svg,
+div[data-test-id*="options"] svg,
+div[class*="options"] svg,
+div[data-test-id*="actions"] svg,
+div[class*="actions"] svg,
+div[data-test-id*="more"] svg,
+div[class*="more"] svg,
+div[data-test-id*="dropdown"] svg,
+div[class*="dropdown"] svg,
+div[data-test-id*="popup"] svg,
+div[class*="popup"] svg,
+div[data-test-id*="popover"] svg,
+div[class*="popover"] svg,
+div[data-test-id*="context"] svg,
+div[class*="context"] svg,
+div[data-test-id*="overlay"] svg,
+div[class*="overlay"] svg,
+div[data-test-id*="flyout"] svg,
+div[class*="flyout"] svg,
+div[data-test-id*="tooltip"] svg,
+div[class*="tooltip"] svg {
+  fill: white !important;
+  color: white !important;
+}
+
+/* AGGRESSIVE - Target text inside the popup */
+div[role="menu"] span,
+div[data-test-id*="menu"] span,
+div[class*="menu"] span,
+div[data-test-id*="options"] span,
+div[class*="options"] span,
+div[data-test-id*="actions"] span,
+div[class*="actions"] span,
+div[data-test-id*="more"] span,
+div[class*="more"] span,
+div[data-test-id*="dropdown"] span,
+div[class*="dropdown"] span,
+div[data-test-id*="popup"] span,
+div[class*="popup"] span,
+div[data-test-id*="popover"] span,
+div[class*="popover"] span,
+div[data-test-id*="context"] span,
+div[class*="context"] span,
+div[data-test-id*="overlay"] span,
+div[class*="overlay"] span,
+div[data-test-id*="flyout"] span,
+div[class*="flyout"] span,
+div[data-test-id*="tooltip"] span,
+div[class*="tooltip"] span,
+div[role="menu"] div,
+div[data-test-id*="menu"] div,
+div[class*="menu"] div,
+div[data-test-id*="options"] div,
+div[class*="options"] div,
+div[data-test-id*="actions"] div,
+div[class*="actions"] div,
+div[data-test-id*="more"] div,
+div[class*="more"] div,
+div[data-test-id*="dropdown"] div,
+div[class*="dropdown"] div,
+div[data-test-id*="popup"] div,
+div[class*="popup"] div,
+div[data-test-id*="popover"] div,
+div[class*="popover"] div,
+div[data-test-id*="context"] div,
+div[class*="context"] div,
+div[data-test-id*="overlay"] div,
+div[class*="overlay"] div,
+div[data-test-id*="flyout"] div,
+div[class*="flyout"] div,
+div[data-test-id*="tooltip"] div,
+div[class*="tooltip"] div {
+  color: white !important;
+}
+
+/* NUCLEAR OPTION - Target any div that appears after clicking */
+body > div:last-child,
+body > div:nth-last-child(2),
+body > div:nth-last-child(3),
+body > div:nth-last-child(4),
+body > div:nth-last-child(5) {
+  background-color: #fca7b4 !important;
+  border-radius: 20px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* NUCLEAR OPTION - Target any div inside the last few divs */
+body > div:last-child div,
+body > div:nth-last-child(2) div,
+body > div:nth-last-child(3) div,
+body > div:nth-last-child(4) div,
+body > div:nth-last-child(5) div {
+  background-color: #fca7b4 !important;
+  border-radius: 20px !important;
+}
+
+/* NUCLEAR OPTION - Target any button inside the last few divs */
+body > div:last-child button,
+body > div:nth-last-child(2) button,
+body > div:nth-last-child(3) button,
+body > div:nth-last-child(4) button,
+body > div:nth-last-child(5) button {
+  background-color: transparent !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 10px !important;
+  padding: 10px 15px !important;
+  margin: 5px 10px !important;
+  text-align: left !important;
+}
+
+/* NUCLEAR OPTION - Target any span inside the last few divs */
+body > div:last-child span,
+body > div:nth-last-child(2) span,
+body > div:nth-last-child(3) span,
+body > div:nth-last-child(4) span,
+body > div:nth-last-child(5) span {
+  color: white !important;
+}
+
+/* NUCLEAR OPTION - Target any svg inside the last few divs */
+body > div:last-child svg,
+body > div:nth-last-child(2) svg,
+body > div:nth-last-child(3) svg,
+body > div:nth-last-child(4) svg,
+body > div:nth-last-child(5) svg {
+  fill: white !important;
+  color: white !important;
+}

@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "Pinterest Pink Theme",
+  "version": "1.0",
+  "description": "A pink theme for Pinterest",
+  "content_scripts": [
+    {
+      "matches": ["*://*.pinterest.com/*"],
+      "css": ["pink-theme.css"]
+    }
+  ]
+}
