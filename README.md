@@ -1,6 +1,4 @@
-# Projectsssss
-Stuff I make in my free time 
-Most of this shit is ass and I'm only doing them for practise :P
-Feel free to playaround with them
-
-Let me know what you would like to see more of XD
+# PINK PINTEREST 🎀
+MY FORST GITHUB PROJECT XD
+It isn't perfect perfect but shape imo...
+PLEASE PLEASE PLEASEEEEEEE LET ME KNOW WHAT YOU WANT FIX TT^TT
